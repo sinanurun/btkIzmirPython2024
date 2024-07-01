@@ -6,5 +6,5 @@ print(35 * 87.0)
 print(35 / 5)
 print(35 / 5.0)
 print(35 + 5.0)
-print("35" + "90") # + operatörü stringlerde birleştirme yapar
+print("ali" + "can") # + operatörü stringlerde birleştirme yapar
 print("kadirkadir" * 2) # * operatörü stringlerde çoğaltma işlemi için kullanılır
