@@ -1,0 +1,5 @@
+print("Sinan")
+print("URUN")
+print(20)
+print(1.9)
+print(True)
