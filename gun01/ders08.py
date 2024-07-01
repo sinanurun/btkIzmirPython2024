@@ -8,3 +8,4 @@ print(60 - 7) # - operatörütam çıkartma işlemi için kullanılır
 print(60 + 7) # + operatörütam toplama işlemi için kullanılır
 print(60 ** 3) # ** operatörü üs alma için kullanılır (a**b) yani a üssü b
 
+
