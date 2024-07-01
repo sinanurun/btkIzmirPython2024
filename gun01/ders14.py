@@ -5,10 +5,8 @@ print(sayi, ssayi)
 print(sayi*2, ssayi*2)
 # x değerini stringe çevirmek için str(x) methodu kullanılır
 
-numara = "782"
-inumara = int(numara)
-print(inumara, numara)
-print(inumara*2, numara*2)
+
+
 
 ondalikli = "12.5"
 osayi = float(ondalikli)
