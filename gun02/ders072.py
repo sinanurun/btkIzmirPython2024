@@ -8,3 +8,5 @@ if yemek=="pide":
         print("yemek doğru içecek yanlış")
 else:
     print("sipariş yanlış")
+
+
