@@ -1,5 +1,4 @@
-print("adınız nedir?")
-ad = input()
+ad = input("adınız nedir? \t:")
 print(type(ad))
 print("Memnun Oldum", ad)
 print("Yaşın Kaç?")
