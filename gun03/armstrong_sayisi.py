@@ -8,7 +8,7 @@
 #     print(rakam, kup, toplam)
 # if toplam == sayi:
 #     print(sayi,"sayisi bir armstrong sayısıdır")
-#versiyon 1
+#versiyon 2
 for i in range(100000):
     sayi = i
     ssayi = str(sayi)
