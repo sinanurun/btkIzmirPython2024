@@ -102,4 +102,6 @@ while tahmin != sayi:
 else:
     print("Tahmin Başarılı tebrikler")
 print(tahminler)
+print(tahmin.get("geçerli"))
+print(tahmin.get("geçersiz"))
 print(len(gecerli+gecersiz)," kerede bildiniz")
