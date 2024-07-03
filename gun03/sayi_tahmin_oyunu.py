@@ -14,9 +14,30 @@
 # elif tahmin > sayi:
 #     print("Tahmin Başarısız Keşke küçük bür sayı söyleseydin")
 # elif tahmin < sayi:
-#     print("Tahmin Başarısız Keşke küçük bür sayı söyleseydin")
+#     print("Tahmin Başarısız Keşke büyük bir sayı söyleseydin")
 
-#versiyon 3
+# #versiyon 3
+# sayi = 35
+# taban = 0
+# tavan = 100
+# print(f"Tahmin edeceğiniz sayı {taban} - {tavan} aralığındadır")
+# tahmin = int(input("Bir sayı giriniz"))
+# while True:
+#     if taban <= tahmin <= tavan:
+#         print(f"Tahmin geçerli aralıkta")
+#         break
+#     else:
+#         print(f"Tahmin aralığı dışında geçersiz tahmin")
+#         print(f"Tahmin edeceğiniz sayı {taban} - {tavan} aralığındadır")
+#         tahmin = int(input("Bir sayı giriniz"))
+# if tahmin == sayi:
+#     print("Tahmin başarılı")
+# elif tahmin > sayi:
+#     print("Tahmin Başarısız Keşke küçük bür sayı söyleseydin")
+# elif tahmin < sayi:
+#     print("Tahmin Başarısız Keşke büyük bir sayı söyleseydin")
+
+#versiyon 4 tahmin etmeye devam edebilsin
 sayi = 35
 taban = 0
 tavan = 100
@@ -30,9 +51,13 @@ while True:
         print(f"Tahmin aralığı dışında geçersiz tahmin")
         print(f"Tahmin edeceğiniz sayı {taban} - {tavan} aralığındadır")
         tahmin = int(input("Bir sayı giriniz"))
-if tahmin == sayi:
-    print("Tahmin başarılı")
-elif tahmin > sayi:
-    print("Tahmin Başarısız Keşke küçük bür sayı söyleseydin")
-elif tahmin < sayi:
-    print("Tahmin Başarısız Keşke küçük bür sayı söyleseydin")
+while True:
+    if tahmin == sayi:
+        print("Tahmin başarılı")
+        break
+    elif tahmin > sayi:
+        print("Tahmin Başarısız Keşke küçük bir sayı söyleseydin")
+    elif tahmin < sayi:
+        print("Tahmin Başarısız Keşke büyük bir sayı söyleseydin")
+    print(f"Tahmin edeceğiniz sayı {taban} - {tavan} aralığındadır")
+    tahmin = int(input("Bir sayı giriniz"))
