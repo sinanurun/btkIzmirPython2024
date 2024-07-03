@@ -85,7 +85,7 @@ while tahmin != sayi:
         print("Tahmin Başarısız Keşke büyük bir sayı söyleseydin")
         taban = tahmin
     while True:
-        if taban <= tahmin <= tavan:
+        if taban < tahmin < tavan:
             print(f"Tahmin geçerli aralıkta")
             break
         else:
