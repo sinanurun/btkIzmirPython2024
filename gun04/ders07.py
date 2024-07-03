@@ -1,14 +1,9 @@
-dosya = open("deneme.txt")
-# print(dosya.read())
-# print(dosya.read(10))
-# print(dosya.readline())
-# print(dosya.readline())
-# satirlar = dosya.readlines()
-# print(satirlar)
-# for satir in satirlar:
-#     print(satir, end="")
-okuma1 = dosya.read()
-print(okuma1)
-okuma2 = dosya.read()
-print(okuma2)
-dosya.close()
+dosya_adi = "deneme.txt"
+with open(dosya_adi) as dosya:
+    print(dosya.readline())
+    print(dosya.readline())
+
+with open(dosya_adi) as dosya:
+    metin = dosya.read()
+    satirlar = metin.split("\n")
+    for i in satirlar:print(i)
