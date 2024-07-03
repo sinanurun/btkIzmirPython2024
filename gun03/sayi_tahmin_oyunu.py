@@ -67,15 +67,20 @@
 sayi = 35
 taban = 0
 tavan = 100
+gecerli = []
+gecersiz = []
+tahminler = {"gecerli":gecerli,"gecersiz":gecersiz}
 print(f"Tahmin edeceğiniz sayı {taban} - {tavan} aralığındadır")
 tahmin = int(input("Bir sayı giriniz"))
 while True:
     if taban <= tahmin <= tavan:
         print(f"Tahmin geçerli aralıkta")
+        gecerli.append(tahmin)
         break
     else:
         print(f"Tahmin aralığı dışında geçersiz tahmin")
         print(f"Tahmin edeceğiniz sayı {taban} - {tavan} aralığındadır")
+        gecersiz.append(tahmin)
         tahmin = int(input("Bir sayı giriniz"))
 while tahmin != sayi:
     if tahmin > sayi:
@@ -87,10 +92,14 @@ while tahmin != sayi:
     while True:
         if taban < tahmin < tavan:
             print(f"Tahmin geçerli aralıkta")
+            gecerli.append(tahmin)
             break
         else:
             print(f"Tahmin aralığı dışında geçersiz tahmin")
             print(f"Tahmin edeceğiniz sayı {taban} - {tavan} aralığındadır")
+            gecersiz.append(tahmin)
             tahmin = int(input("Bir sayı giriniz"))
 else:
     print("Tahmin Başarılı tebrikler")
+print(tahminler)
+print(len(gecerli+gecersiz)," kerede bildiniz")
