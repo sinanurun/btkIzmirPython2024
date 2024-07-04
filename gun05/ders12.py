@@ -4,9 +4,9 @@ class Ogrenci():
 
     def __init__(self):
         print("Ogrenci oluşturuldu")
-        self.ad = ""
-        self.soyad = ""
-        self.tcno = ""
+        self.ad = input("ad gir")
+        self.soyad = input("soyadad gir")
+        self.tcno = input("tc gir")
 
 ogr1 = Ogrenci()
 print(ogr1.bolum)
