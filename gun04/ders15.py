@@ -8,9 +8,11 @@ def carpma(a,b):
     return a*b
 
 def karsilama():
+    def sayiAl():
+        return int(input("bir sayı giriniz"))
     islem = input("+, -, *")
-    sayi1 = int(input("1, sayı"))
-    sayi2 = int(input("2, sayı"))
+    sayi1 = sayiAl()
+    sayi2 = sayiAl()
     match islem:
         case "+":
             print(toplama(sayi1, sayi2))
