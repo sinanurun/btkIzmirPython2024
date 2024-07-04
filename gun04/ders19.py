@@ -1,3 +1,5 @@
+# tek * tupla yapmak için
+# ** sözlük tipine çevirip veriyi almak için
 def ogrencKarti(a,b,c,d=8,*args,**kwargs):
     print(a,b,c,d)
     print(args)
