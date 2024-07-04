@@ -1,3 +1,4 @@
+#recursive fonksiyon ve iç içe fonksiyon tanımlanarak kullanımı
 def for_dongusu(baslangic, bitis = 0, artis = 1):
     for_listesi = []
     def sirala(baslangic,bitis,artis= artis):
