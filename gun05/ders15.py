@@ -25,19 +25,25 @@ class Fatura():
         urun_tutar = self.icerik[urun_ad][3]
         self.tutar -= urun_tutar
         print(self.icerik[urun_ad], " ürünü sepetten çıkartıldı")
-        self.icerik.remove(urun_ad)
+        self.icerik.pop(urun_ad)
         return self.tutar
 
     def faturaTutari(self):
         print("güncel fatura tutari",self.tutar)
         return self.tutar
 
-
-
-
     def __str__(self):
         return self.m_adi+" adlı müşterinin faturası"
 
-
 musteri = Fatura("hamza","1452","bugün")
-print(musteri)
+
+while True:
+    cevap = int(input("urun ekle 1 \t  çıkart: 2\t,  Göster : 3\t"))
+    if cevap == 1:
+        musteri.urunEkle()
+    elif cevap == 2:
+        musteri.urunCikar()
+    elif cevap == 3:
+        musteri.faturaTutari()
+    else:
+        print("hatalı işlem girişi")
