@@ -11,6 +11,7 @@ class Otomobil():
         if self.calisma_durumu == False:
             self.calisma_durumu = True
             print("araba çalıştırıldı")
+            self.hiz = 0
         else:
             print("araba zaten çalışıyor")
 
@@ -20,6 +21,31 @@ class Otomobil():
             print("araba durduruldu")
         else:
             print("araba zaten duruyor")
+
+    def hizArttir(self):
+        if self.calisma_durumu == True:
+            self.hiz += 10
+            print(self.hiz)
+        else:
+            print("arabayı öncelikle çalıştırınız")
+    def hizAzalt(self):
+        if self.calisma_durumu == True and self.hiz >=10:
+            self.hiz -= 10
+            print(self.hiz)
+        elif self.calisma_durumu == True and self.hiz ==0:
+            print("araç çalşıyor ama zaten duruyor hız azaltılamaz")
+        else:
+            print("arabayı öncelikle çalıştırınız")
+
+    def hizGoster(self):
+        if self.calisma_durumu == False:
+            self.hiz = 0
+        print("aracın hızı",self.hiz)
+        return self.hiz
+
+    def cikis(self):
+        print("çıkış yapıldı")
+        exit()
 
 
 
