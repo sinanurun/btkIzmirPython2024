@@ -8,8 +8,10 @@ class Urun():
         pass
     def adetAzalt(self):
         pass
-    def __str__(self):
-        return (self.urun_ad,self.urun_tutar)
+    def __repr__(self):
+        return f"{self.urun_ad}"
+    # def __str__(self):
+    #     return (self.urun_ad,self.urun_tutar)
 class Fatura():
     baslik = "Halil Pazarlama"
     odeme = True
@@ -22,20 +24,16 @@ class Fatura():
         self.icerik = {}
 
     def urunEkle(self):
-        urun_ad = input("ürün bilgisi giriniz")
-        urun_fiyati = int(input(f"{urun_ad} fiyatını giriniz"))
-        urun_adet = int(input(f"{urun_ad} adet bilgisi"))
-        urun_tutar = urun_adet * urun_fiyati
-        self.tutar += urun_tutar
-        self.icerik[urun_ad] = [urun_ad,urun_adet, urun_fiyati,urun_tutar]
-        print(self.icerik[urun_ad], " ürünü sepete eklendi")
+        urun = Urun()
+        self.tutar += urun.urun_tutar
+        self.icerik[urun.urun_ad] = urun
+        print(self.icerik[urun.urun_ad], " ürünü sepete eklendi")
         return self.tutar
 
     def urunCikar(self):
         urun_ad = input("çıkartman için ürün bilgisi giriniz")
-        # urun_adet = int(input(f"{urun_ad} adet bilgisi"))
-        urun_tutar = self.icerik[urun_ad][3]
-        self.tutar -= urun_tutar
+        urun = self.icerik[urun_ad]
+        self.tutar -= urun.urun_tutar
         print(self.icerik[urun_ad], " ürünü sepetten çıkartıldı")
         self.icerik.pop(urun_ad)
         return self.tutar
