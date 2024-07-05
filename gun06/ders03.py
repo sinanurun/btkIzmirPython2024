@@ -6,7 +6,7 @@ class Ogrenci():
 class FOgrenci(Ogrenci):
     def __init__(self,ad, soyad, fakulte):
         # Ogrenci.__init__(self,ad,soyad)
-        super().__init__(self,ad,soyad)
+        super().__init__(ad,soyad)
         self.fakulte=fakulte
 
 class BOgrenci(FOgrenci):
@@ -14,4 +14,10 @@ class BOgrenci(FOgrenci):
         FOgrenci.__init__(self,ad, soyad, fakulte)
         self.bolum=bolum
 
+ogr = Ogrenci("ali","veli")
+fogr = FOgrenci("ali","veli","Muhendislik")
+bogr = BOgrenci("ali","veli","Muhendislik","Bilgisayar")
 
+print(vars(ogr))
+print(vars(fogr))
+print(vars(bogr))
