@@ -20,14 +20,19 @@ class Fatura():
         return self.tutar
 
     def urunCikar(self):
-        urun_ad = input("ürün bilgisi giriniz")
-        urun_fiyati = int(input(f"{urun_ad} fiyatını giriniz"))
-        urun_adet = int(input(f"{urun_ad} adet bilgisi"))
-        urun_tutar = urun_adet * urun_fiyati
-        self.tutar += urun_tutar
-        self.icerik[urun_ad] = [urun_ad,urun_adet, urun_fiyati,urun_tutar]
-        print(self.icerik[urun_ad], " ürünü sepete eklendi")
+        urun_ad = input("çıkartman için ürün bilgisi giriniz")
+        # urun_adet = int(input(f"{urun_ad} adet bilgisi"))
+        urun_tutar = self.icerik[urun_ad][3]
+        self.tutar -= urun_tutar
+        print(self.icerik[urun_ad], " ürünü sepetten çıkartıldı")
+        self.icerik.remove(urun_ad)
         return self.tutar
+
+    def faturaTutari(self):
+        print("güncel fatura tutari",self.tutar)
+        return self.tutar
+
+
 
 
     def __str__(self):
