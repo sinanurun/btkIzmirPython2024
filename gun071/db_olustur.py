@@ -11,5 +11,8 @@ class Birim(Base):
     birim_id = Column(Integer, primary_key=True, autoincrement=True)
     birim_adi = Column(String(100), nullable= False, default= "Birimsiz")
 
+    def __repr__(self):
+        return self.birim_adi
+
 engine = create_engine('sqlite:///deneme.sqlite')
 Base.metadata.create_all(engine)
