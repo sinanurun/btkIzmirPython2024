@@ -25,5 +25,14 @@ def birimGuncelle():
     session.commit()
     return birimListele()
 
+def birimSil():
+    birimListele()
+    birimid = int(input("Silmek istediğiniz birimin idsi giriniz"))
+    birim = session.query(Birim).filter(Birim.birim_id == birimid).delete()
+    session.commit()
+    return birimListele()
+
+
 birimGuncelle()
+birimSil()
 
