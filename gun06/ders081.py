@@ -25,6 +25,11 @@ def kitapTanimla():
     except:
         return False
 
+def kitapGuncelle(gkitap):
+    kitap = Kitap.kitapOlustur(kitap_listesi[gkitap])
+    kitap.ad = "deli"
+    kitap_listesi[gkitap] = vars(kitap)
+
 def kitapListele():
     if len(kitap_listesi) == 0:
         return "Listelenecek Kitap Yok"
