@@ -19,3 +19,11 @@ def birimEkle():
 def birimGuncelle():
     birimListele()
     birimid = int(input("Güncellemek istediğiniz birimin idsi giriniz"))
+    birim = session.query(Birim).filter(Birim.birim_id == birimid).first()
+    yeni_birim_adi = input("Yeni birim adini giriniz")
+    birim.birim_adi = yeni_birim_adi
+    session.commit()
+    return birimListele()
+
+birimGuncelle()
+
