@@ -6,6 +6,11 @@ class Kitap():
         self.sayfa = sayfa
         self.basim = basim
 
+    @classmethod
+    def kitapOlustur(cls,kwargs):
+        ad,yazar,sayfa,basim = kwargs.values()
+        return cls(ad, yazar, sayfa, basim)
+
 
 def kitapTanimla():
     try:
