@@ -1,6 +1,4 @@
 import json
-kitap_listesi = []
-
 class Kitap():
     def __init__(self, ad, yazar, sayfa, basim):
         self.ad = ad
@@ -32,14 +30,15 @@ def kitapListele():
 def kayitliKitapListele():
     try:
         with open("kitaplistesi.json", "r") as dosya:
-            kitap_listesi = list(json.load(dosya))
-            if len(kitap_listesi) == 0:
+            kayitli_kitap_listesi = list(json.load(dosya))
+            if len(kayitli_kitap_listesi ) == 0:
                 print("Kayitli kitap bulunama")
             else:
-                for x, kitap in enumerate(kitap_listesi):
+                for x, kitap in enumerate(kayitli_kitap_listesi ):
                     print(x+1,kitap["ad"])
+            return kayitli_kitap_listesi
     except:
-        pass
+        return []
 
 def kitapListesiKaydet():
     try:
@@ -68,4 +67,5 @@ def menu():
             exit()
 
 if __name__ == "__main__":
+    kitap_listesi = kayitliKitapListele()
     menu()
