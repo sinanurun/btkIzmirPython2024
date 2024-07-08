@@ -1,16 +1,21 @@
-from db_olustur import *
+from orm_db import *
 
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-birimler = session.query(Birim).all()
-print(birimler)
+def birimListele():
+    birimler = session.query(Birim).all()
+    for birim in birimler:
+        print(birim.birim_id, birim.birim_adi)
+    return birimler
 
-birimadi = input("bir birim adi giriniz")
+def birimEkle():
+    birimadi = input("bir birim adi giriniz")
+    yeniBirim = Birim(birim_adi=birimadi)
+    session.add(yeniBirim)
+    session.commit()
 
-yeniBirim = Birim(birim_adi=birimadi)
-session.add(yeniBirim)
-session.commit()
-birimler = session.query(Birim).all()
-print(birimler)
+def birimGuncelle():
+    birimListele()
+    birimid = int(input("Güncellemek istediğiniz birimin idsi giriniz"))
