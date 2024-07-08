@@ -7,8 +7,7 @@ class Kitap():
         self.yazar = yazar
         self.sayfa = sayfa
         self.basim = basim
-    def __str__(self):
-        return self.ad
+
 
 def kitapTanimla():
     try:
@@ -17,7 +16,8 @@ def kitapTanimla():
         kitap_sayfa = int(input("sayfa"))
         kitap_yili = int(input("yili"))
         kitap = Kitap(kitap_adi, kitap_yazar, kitap_sayfa, kitap_yili)
-        kitap_listesi.append(kitap)
+        kitap_bilgisi = vars(kitap)
+        kitap_listesi.append(kitap_bilgisi)
         return True
     except:
         return False
@@ -27,7 +27,19 @@ def kitapListele():
         return "Listelenecek Kitap Yok"
     else:
         for x, kitap in enumerate(kitap_listesi):
-            print(x+1,kitap)
+            print(x+1,kitap["ad"])
+
+def kayitliKitapListele():
+    try:
+        with open("kitaplistesi.json", "r") as dosya:
+            kitap_listesi = list(json.load(dosya))
+            if len(kitap_listesi) == 0:
+                print("Kayitli kitap bulunama")
+            else:
+                for x, kitap in enumerate(kitap_listesi):
+                    print(x+1,kitap["ad"])
+    except:
+        pass
 
 def kitapListesiKaydet():
     try:
@@ -36,20 +48,22 @@ def kitapListesiKaydet():
             kitap_listesi_dosyasi.write(kitap_bilgileri)
             print("Kayıt işlemi Başarılı")
             return True
-    except:
-        print("Kayıt işlemi Başarısız")
+    except Exception as e:
+        print("Kayıt işlemi Başarısız", e)
         return True
 
 
 def menu():
     while True:
-        k_giris = input("Yeni Kitap Tanımla:1, Listele:2, Kaydet:3, Çıkış:Q")
+        k_giris = input("Yeni Kitap Tanımla:1, Listele:2, Kaydet:3,Kayitli Kitaplar:4, Çıkış:Q")
         if k_giris == "1":
             kitapTanimla()
         elif k_giris == "2":
             kitapListele()
         elif k_giris == "3":
             kitapListesiKaydet()
+        elif k_giris == "4":
+            kayitliKitapListele()
         else:
             exit()
 
