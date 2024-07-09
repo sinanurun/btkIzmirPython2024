@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="deneme" uuid="e8ccc114-8b2e-4666-aeb8-ff1ea4043473">
+    <data-source source="LOCAL" name="kitaplik" uuid="6c530df9-9019-4026-add2-555263e6a1f6">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\sinan\OneDrive\Desktop\btkIzmirPython2024\gun071\deneme.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\sinan\OneDrive\Desktop\btkIzmirPython2024\gun081_iliskisel_db\kitaplik.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
