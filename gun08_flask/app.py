@@ -7,6 +7,7 @@ def index():  # put application's code here
     mesaj = "Merhaba Dünya"
     try:
         kullanici = User.query.filter(User.name=="esma", User.password=="nur").first()
+        # kullanici = User.query.filter_by(name=="esma", password=="nur").first()
         print(kullanici)
         if kullanici == None:
             mesaj = "Kullanici bulunamadı"
