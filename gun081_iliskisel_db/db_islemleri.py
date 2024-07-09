@@ -21,6 +21,26 @@ def kitap_listele(k_id):
     except:
         return False
 
+def kitap_ekle(k_adi,k_sayfa_sayisi,user_id):
+    try:
+        yeni_kitap = Kitaplik(kitap_user=user_id,kitap_adi=k_adi,
+                              kitap_sayfa_sayisi=int(k_sayfa_sayisi))
+        session.add(yeni_kitap)
+        session.commit()
+        return True
+    except Exception as e:
+        print(e)
+        return False
+    
+def kitap_sil(kitap_id):
+    try:
+        session.query(Kitaplik).filter(Kitaplik.kitap_id==kitap_id).delete()
+        session.commit()
+        return True
+    except Exception as e:
+        print(e)
+        return False
+
 k_adi = input("kullanıcı adı giriniz")
 k_sifre = input("kullanıcı şifre giriniz")
 kullanici = kGirisi(k_adi,k_sifre)
