@@ -1,12 +1,17 @@
-from flask import render_template
+from flask import render_template, request
+
 from orm_db import *
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():  # put application's code here
+    if request.method == "POST":
+        name = request.form['name']
+        password = request.form['password']
+
     mesaj = "Merhaba Dünya"
     try:
-        kullanici = User.query.filter(User.name=="esma", User.password=="nur").first()
+        kullanici = User.query.filter(User.name==name, User.password==password).first()
         # kullanici = User.query.filter_by(name=="esma", password=="nur").first()
         print(kullanici)
         if kullanici == None:
