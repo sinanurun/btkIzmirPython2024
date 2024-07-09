@@ -12,13 +12,17 @@ def kGirisi(k_adi, k_sifre):
 
 def kitap_listele(k_id):
     try:
-        kitaplar = session.query(Kitaplik).filter(Kitaplik.kitap_user==k_id).all()
+        kitaplar = session.query(Kitaplik).filter(Kitaplik.kitap_user==int(k_id)).all()
+        # print(kitaplar)
         if len(kitaplar) > 0:
+            for kitap in kitaplar:
+                print(kitap.kitap_adi)
             return kitaplar
         else:
             print("Kitapliğiniz boş")
             return False
-    except:
+    except Exception as e:
+        print(e)
         return False
 
 def kitap_ekle(k_adi,k_sayfa_sayisi,user_id):
@@ -31,7 +35,7 @@ def kitap_ekle(k_adi,k_sayfa_sayisi,user_id):
     except Exception as e:
         print(e)
         return False
-    
+
 def kitap_sil(kitap_id):
     try:
         session.query(Kitaplik).filter(Kitaplik.kitap_id==kitap_id).delete()
@@ -45,3 +49,6 @@ k_adi = input("kullanıcı adı giriniz")
 k_sifre = input("kullanıcı şifre giriniz")
 kullanici = kGirisi(k_adi,k_sifre)
 kitap_listele(kullanici.user_id)
+# kitap_adi = input("ad")
+# kitap_ss = int(input("sayfa"))
+# kitap_ekle(kitap_adi,kitap_ss,kullanici.user_id)
