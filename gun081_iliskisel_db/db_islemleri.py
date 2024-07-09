@@ -24,5 +24,4 @@ def kitap_listele(k_id):
 k_adi = input("kullanıcı adı giriniz")
 k_sifre = input("kullanıcı şifre giriniz")
 kullanici = kGirisi(k_adi,k_sifre)
-
 kitap_listele(kullanici.user_id)
